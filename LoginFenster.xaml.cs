@@ -28,12 +28,12 @@ namespace Ski_Service_2
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"Data Source=MAX_LAPTOP;Initial Catalog=SkiService;Integrated Security=True");
+            SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-2MEVUSI\SQLEXPRESS01;Initial Catalog=SkiService;Integrated Security=True");
             try
             {
                 if (sqlCon.State == System.Data.ConnectionState.Closed)
                     sqlCon.Open();
-                String query = "SELECT * FROM dbo.Account WHERE Username=@Username AND Password=@Password";
+                String query = "SELECT * FROM dbo.Benutzer WHERE Benutzername=@Username AND Passwort=@Password";
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                 sqlCmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Password.Trim());
