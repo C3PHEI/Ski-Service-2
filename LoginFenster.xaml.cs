@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Ski_Service_2
 {
-    /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
-    /// </summary>
     public partial class Login : Window
     {
         public Login()

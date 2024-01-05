@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="Dashboard" Height="700" Width="1000">
     <Grid>
-        <Label Content="Home Screen"/>
-    </Grid>
+    <DataGrid ItemsSource="{Binding ServiceOrders}" AutoGenerateColumns="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Priorität" Binding="{Binding Priorität}" />
+                <DataGridTextColumn Header="Dienstleistung" Binding="{Binding Dienstleistung}" />
+                <DataGridTextColumn Header="Kundenname" Binding="{Binding Kundenname}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}" />
+                <DataGridTextColumn Header="Datum" Binding="{Binding Datum}" />
+                <DataGridTextColumn Header="Preis" Binding="{Binding Preis}" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+                <DataGridTextColumn Header="Mitarbeiter" Binding="{Binding Mitarbeiter}" />
+
+                <!-- Weitere Spalten... -->
+        </DataGrid.Columns>
+    </DataGrid>
+</Grid>
 </Window>
+
