@@ -35,7 +35,17 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
-        <Button Grid.Row="1" Content="🖌️Bearbeitung" FontSize="30" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="965" Height="200"/>
+        
+        <Button Grid.Row="1" 
+                Content="🖌️Bearbeitung" 
+                FontSize="30" 
+                HorizontalAlignment="Left" 
+                Margin="10,10,10,10" 
+                VerticalAlignment="Top" 
+                Width="965" 
+                Height="200"
+                Command="{Binding BearbeitenCommand}"/>
+        
         <Separator Grid.Row="1" HorizontalAlignment="Left" Height="10" Margin="10,250,0,0" VerticalAlignment="Top" Width="965"/>
         <StackPanel Grid.Row="2" Margin="0,0,0,0">
             <TextBlock Text="Angemeldeter Benutzer: Maximilian" FontSize="20" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="Auto" Height="Auto"/>

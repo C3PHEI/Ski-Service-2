@@ -19,6 +19,8 @@ namespace Ski_Service_2.Orders
 
         public ICommand AbmeldenCommand { get; }
 
+        public ICommand BearbeitenCommand { get; }
+
         public ObservableCollection<OrderModel> ServiceOrders
         {
             get { return serviceOrders; }
@@ -37,6 +39,7 @@ namespace Ski_Service_2.Orders
             LoadOrders();
             AbmeldenCommand = new RelayCommand(AbmeldenAusführen);
             EntsperrenCommand = new RelayCommand(EntsperrenAusführen);
+            BearbeitenCommand = new RelayCommand(BearbeitenAusführen);
         }
 
         private void LoadOrders()
@@ -66,8 +69,8 @@ namespace Ski_Service_2.Orders
                                     Telefon = reader["Telefon"].ToString(),
                                     DatumEinreichung = Convert.ToDateTime(reader["DatumEinreichung"]),
                                     Preis = Convert.ToDecimal(reader["Preis"]),
-                                    StatusID = Convert.ToInt32(reader["StatusName"]),
-                                    MitarbeiterID = Convert.ToInt32(reader["MitarbeiterName"])
+                                    StatusID = Convert.ToInt32(reader["StatusID"]),
+                                    MitarbeiterID = Convert.ToInt32(reader["MitarbeiterID"])
                                 };
                                 orders.Add(order);
                             }
@@ -95,5 +98,14 @@ namespace Ski_Service_2.Orders
             // Schließt nicht das Hauptfenster FIXEN
             Application.Current.MainWindow.Close();
         }
+        private void BearbeitenAusführen(object parameter)
+        {
+            BestellungEdit loginWindow = new BestellungEdit();
+            loginWindow.Show();
+
+            // Schließt nicht das Hauptfenster FIXEN
+            Application.Current.MainWindow.Close();
+        }
+
     }
 }

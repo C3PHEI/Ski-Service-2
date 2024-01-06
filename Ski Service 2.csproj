@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BestellungEditViewModels\BestellungEditViewModel.cs" />
     <Compile Include="ConnectionString.cs" />
     <Compile Include="MainWindowViewModels\MainWindowViewModel.cs" />
     <Compile Include="Models\OrderModel.cs" />
