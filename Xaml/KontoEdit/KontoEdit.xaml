@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Ski_Service_2"
+        xmlns:local="clr-namespace:Ski_Service_2.KontoEditViewModels"
         mc:Ignorable="d"
-        Title="Konto Entsperrung" Height="250" Width="400">
+        Title="Konto bearbeiten" Height="350" Width="500">
     <Grid>
-        
+        <ComboBox Height="50" Margin="80,19,80,165" ItemsSource="{Binding MitarbeiterList}" DisplayMemberPath="MitarbeiterName" SelectedItem="{Binding SelectedMitarbeiter}" />
+        <Button Width="100" Height="50" Content="Speichern" Margin="150,126,150,58"/>
     </Grid>
 </Window>

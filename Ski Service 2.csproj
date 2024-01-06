@@ -57,6 +57,8 @@
     </ApplicationDefinition>
     <Compile Include="BestellungEditViewModels\BestellungEditViewModel.cs" />
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="KontoEditViewModels\KontoEditViewModel.cs" />
+    <Compile Include="KontoEditViewModels\MitarbeiterModel.cs" />
     <Compile Include="MainWindowViewModels\MainWindowViewModel.cs" />
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="MainWindowViewModels\RelayCommand.cs" />
@@ -122,8 +124,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="KontoEditViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

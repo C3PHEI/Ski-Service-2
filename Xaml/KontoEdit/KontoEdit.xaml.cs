@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ski_Service_2.KontoEditViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace Ski_Service_2
         public KontoEdit()
         {
             InitializeComponent();
+            DataContext = new KontoEditViewModel();
         }
     }
 }
