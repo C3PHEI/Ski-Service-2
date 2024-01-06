@@ -1,5 +1,4 @@
-﻿using Ski_Service_2.Orders;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,16 +15,13 @@ using System.Windows.Shapes;
 namespace Ski_Service_2
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für BestellungEdit.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class BestellungEdit : Window
     {
-        public MainWindow()
+        public BestellungEdit()
         {
             InitializeComponent();
-
-            // Setze den DataContext auf das MainWindowViewModel
-            DataContext = new MainWindowViewModel();
         }
     }
 }
