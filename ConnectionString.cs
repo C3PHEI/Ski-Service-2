@@ -8,7 +8,7 @@ namespace Ski_Service_2
 {
     public static class AppConfig
     {
-        public static string ConnectionString { get; } = @"Data Source=DESKTOP-2MEVUSI\SQLEXPRESS01;Initial Catalog=SkiService;Integrated Security=True";
+        public static string ConnectionString { get; } = @"Data Source=;Initial Catalog=SkiService;Integrated Security=True";
         //Hier Ihre ConnectionString ändern nach Data Source=
         //Das können Sie so lassen - ;Initial Catalog=SkiService;Integrated Security=True";
     }
