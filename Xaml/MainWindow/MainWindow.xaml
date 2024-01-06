@@ -46,16 +46,16 @@
                 Height="200"
                 Command="{Binding BearbeitenCommand}"/>
         
-        <Separator Grid.Row="1" HorizontalAlignment="Left" Height="10" Margin="10,250,0,0" VerticalAlignment="Top" Width="965"/>
         <StackPanel Grid.Row="2" Margin="0,0,-80,0">
-            <TextBlock Text="Angemeldeter Benutzer:" FontSize="20" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="Auto" Height="Auto"/>
+            
+            <TextBlock Text="" FontSize="20" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="Auto" Height="Auto"/>
             <Button Content="Abmelden" 
                     FontSize="20" 
                     HorizontalAlignment="Left" 
                     Margin="10,10,10,10" 
                     Width="315"
                     Height="157"
-                    Command="{Binding AbmeldenCommand}"/>
+                    Command="{Binding AbmeldenCommand}"></Button>
             
             <TextBlock FontSize="20" 
                        HorizontalAlignment="Left" 

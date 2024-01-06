@@ -27,5 +27,9 @@ namespace Ski_Service_2
             // Setze den DataContext auf das MainWindowViewModel
             DataContext = new MainWindowViewModel();
         }
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

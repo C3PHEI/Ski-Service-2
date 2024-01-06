@@ -94,10 +94,13 @@ namespace Ski_Service_2.Orders
         {
             Login loginWindow = new Login();
             loginWindow.Show();
+            
 
-            // Schließt nicht das Hauptfenster FIXEN
+            // Schließt das Hauptfenster
             Application.Current.MainWindow.Close();
+            Application.Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
         }
+
         private void BearbeitenAusführen(object parameter)
         {
             BestellungEdit loginWindow = new BestellungEdit();
