@@ -1,4 +1,4 @@
-Das ist unserer Wpf Projekt
+Das ist unser Wpf Projekt
 
 Hier eine anleitung wie sie unser Projekt testen können 
 
@@ -6,7 +6,7 @@ Hier eine anleitung wie sie unser Projekt testen können
 Laden Sie auf Ihr MSSQL die SkiService.pacpac datei hoch
 
 2 Etappe
-Starten Sie ihre SQL server
+Starten Sie ihr SQL server
 
 3 Etappe 
 Ändern Sie die ConnectionString.cs in unserem Projekt, nur den teil nach DataSource
