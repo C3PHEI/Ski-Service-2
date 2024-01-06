@@ -69,8 +69,8 @@ namespace Ski_Service_2.Orders
                                     Telefon = reader["Telefon"].ToString(),
                                     DatumEinreichung = Convert.ToDateTime(reader["DatumEinreichung"]),
                                     Preis = Convert.ToDecimal(reader["Preis"]),
-                                    StatusID = Convert.ToInt32(reader["StatusID"]),
-                                    MitarbeiterID = Convert.ToInt32(reader["MitarbeiterID"])
+                                    Status = reader["StatusName"].ToString(),
+                                    Mitarbeiter = Convert.ToInt32(reader["MitarbeiterID"])
                                 };
                                 orders.Add(order);
                             }

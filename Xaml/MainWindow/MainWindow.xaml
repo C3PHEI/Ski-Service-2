@@ -30,8 +30,8 @@
                     <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}" IsReadOnly="True" />
                     <DataGridTextColumn Header="Datum" Binding="{Binding DatumEinreichung, StringFormat=\{0:dd.MM.yyyy\}}" IsReadOnly="True" />
                     <DataGridTextColumn Header="Preis" Binding="{Binding Preis}" IsReadOnly="True" />
-                    <DataGridTextColumn Header="Status" Binding="{Binding StatusID}" IsReadOnly="True" />
-                    <DataGridTextColumn Header="Mitarbeiter" Binding="{Binding MitarbeiterID}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Mitarbeiter" Binding="{Binding Mitarbeiter}" IsReadOnly="True" />
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

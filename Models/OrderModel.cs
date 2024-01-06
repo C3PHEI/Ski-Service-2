@@ -16,7 +16,7 @@ namespace Ski_Service_2.Orders
         public string Telefon { get; set; }
         public DateTime DatumEinreichung { get; set; }
         public decimal Preis { get; set; }
-        public int StatusID { get; set; }
-        public int MitarbeiterID { get; set; }
+        public string Status { get; set; }
+        public int Mitarbeiter { get; set; }
     }
 }
