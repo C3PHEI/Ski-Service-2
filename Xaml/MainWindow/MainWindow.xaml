@@ -63,7 +63,7 @@
                        VerticalAlignment="Top" 
                        Width="Auto" 
                        Height="Auto">
-                    <Run Text="Hier konnen Sie alle benutzer entsperren"/>
+                    <Run Text="Hier konnen Sie alle Benutzer entsperren"/>
             </TextBlock>
             
             <Button Content="Entsperren" 
