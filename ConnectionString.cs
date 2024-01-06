@@ -9,5 +9,7 @@ namespace Ski_Service_2
     public static class AppConfig
     {
         public static string ConnectionString { get; } = @"Data Source=DESKTOP-2MEVUSI\SQLEXPRESS01;Initial Catalog=SkiService;Integrated Security=True";
+        //DESKTOP-2MEVUSI\SQLEXPRESS01 = Maximilian
+        //COMPUTER = Tyrone
     }
 }

@@ -102,9 +102,6 @@ namespace Ski_Service_2.Orders
         {
             BestellungEdit loginWindow = new BestellungEdit();
             loginWindow.Show();
-
-            // Schließt nicht das Hauptfenster FIXEN
-            Application.Current.MainWindow.Close();
         }
 
     }
