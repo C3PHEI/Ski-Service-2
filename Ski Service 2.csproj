@@ -56,9 +56,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ConnectionString.cs" />
-    <Compile Include="Orders\MainWindowViewModel.cs" />
-    <Compile Include="Orders\OrderModel.cs" />
-    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="MainWindowViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Models\OrderModel.cs" />
+    <Compile Include="MainWindowViewModels\RelayCommand.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="Xaml\Bestellung\BestellungEdit.xaml">
@@ -122,7 +122,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="KontoEditViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

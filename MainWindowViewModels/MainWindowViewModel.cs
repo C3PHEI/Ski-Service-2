@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Ski_Service_2.Orders
 {
@@ -13,6 +14,10 @@ namespace Ski_Service_2.Orders
     public class MainWindowViewModel : ViewModelBase
     {
         private ObservableCollection<OrderModel> serviceOrders;
+
+        public ICommand EntsperrenCommand { get; }
+
+        public ICommand AbmeldenCommand { get; }
 
         public ObservableCollection<OrderModel> ServiceOrders
         {
@@ -29,14 +34,15 @@ namespace Ski_Service_2.Orders
 
         public MainWindowViewModel()
         {
-            LoadOrders(); // Lade die Bestellungen beim Initialisieren
+            LoadOrders();
+            AbmeldenCommand = new RelayCommand(AbmeldenAusführen);
+            EntsperrenCommand = new RelayCommand(EntsperrenAusführen);
         }
 
         private void LoadOrders()
         {
             try
             {
-                // Verwende die Connection String für deine Datenbank
                 using (SqlConnection connection = new SqlConnection(AppConfig.ConnectionString))
                 {
                     connection.Open();
@@ -72,9 +78,22 @@ namespace Ski_Service_2.Orders
             }
             catch (Exception ex)
             {
-                // Handle Fehler entsprechend deinen Anforderungen
                 MessageBox.Show($"Fehler beim Laden der Bestellungen: {ex.Message}");
             }
+        }
+        private void EntsperrenAusführen(object parameter)
+        {
+            KontoEdit kontoEditWindow = new KontoEdit();
+            kontoEditWindow.Show();
+        }
+
+        private void AbmeldenAusführen(object parameter)
+        {
+            Login loginWindow = new Login();
+            loginWindow.Show();
+
+            // Schließt nicht das Hauptfenster FIXEN
+            Application.Current.MainWindow.Close();
         }
     }
 }

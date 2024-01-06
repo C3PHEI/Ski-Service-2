@@ -53,7 +53,7 @@ namespace Ski_Service_2
         {
             try
             {
-                using (SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-2MEVUSI\SQLEXPRESS01;Initial Catalog=SkiService;Integrated Security=True"))
+                using (SqlConnection sqlCon = new SqlConnection(AppConfig.ConnectionString))
                 {
                     sqlCon.Open();
 
@@ -97,7 +97,7 @@ namespace Ski_Service_2
         {
             try
             {
-                using (SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-2MEVUSI\SQLEXPRESS01;Initial Catalog=SkiService;Integrated Security=True"))
+                using (SqlConnection sqlCon = new SqlConnection(AppConfig.ConnectionString))
                 {
                     sqlCon.Open();
 

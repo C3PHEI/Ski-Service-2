@@ -35,13 +35,34 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
-        <Button Grid.Row="1" Content="Bearbeitung" FontSize="30" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="965" Height="200"/>
-        <Separator Grid.Row="1" HorizontalAlignment="Left" Height="10" Margin="10,10,0,0" VerticalAlignment="Top" Width="965"/>
+        <Button Grid.Row="1" Content="🖌️Bearbeitung" FontSize="30" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="965" Height="200"/>
+        <Separator Grid.Row="1" HorizontalAlignment="Left" Height="10" Margin="10,250,0,0" VerticalAlignment="Top" Width="965"/>
         <StackPanel Grid.Row="2" Margin="0,0,0,0">
             <TextBlock Text="Angemeldeter Benutzer: Maximilian" FontSize="20" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="Auto" Height="Auto"/>
-            <Button Content="Abmelden" FontSize="20" HorizontalAlignment="Left" Margin="10,10,10,10" Width="315" Height="157"/>
-            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="500,-213,10,10" VerticalAlignment="Top" Width="Auto" Height="Auto"><Run Text="Hier konnen Sie alle benutzer "/><LineBreak/><Run Text="bearbeiten und entsperren"/></TextBlock>
-            <Button Content="Hier konnen Sie alle Benutzer bearbeiten und entsperren" FontSize="20" HorizontalAlignment="Left" Margin="500,-170,10,10" Width="315" Height="157"/>
+            <Button Content="Abmelden" 
+                    FontSize="20" 
+                    HorizontalAlignment="Left" 
+                    Margin="10,10,10,10" 
+                    Width="315"
+                    Height="157"
+                    Command="{Binding AbmeldenCommand}"/>
+            
+            <TextBlock FontSize="20" 
+                       HorizontalAlignment="Left" 
+                       Margin="500,-213,10,10" 
+                       VerticalAlignment="Top" 
+                       Width="Auto" 
+                       Height="Auto">
+                    <Run Text="Hier konnen Sie alle benutzer entsperren"/>
+            </TextBlock>
+            
+            <Button Content="Entsperren" 
+                    FontSize="20" 
+                    HorizontalAlignment="Left" 
+                    Margin="500,-170,10,10" 
+                    Width="365" 
+                    Height="157"
+                    Command="{Binding EntsperrenCommand}"/>
         </StackPanel>
         <!-- Click="Button_Click -->
     </Grid>

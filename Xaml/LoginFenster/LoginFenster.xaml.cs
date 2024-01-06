@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ski_Service_2.Orders;
+using System;
 using System.Data.SqlClient;
 using System.Windows;
 
@@ -66,7 +67,7 @@ namespace Ski_Service_2
             // Setze Blockiert auf 1 (True) in der Datenbank
             try
             {
-                using (SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-2MEVUSI\SQLEXPRESS01;Initial Catalog=SkiService;Integrated Security=True"))
+                using (SqlConnection sqlCon = new SqlConnection(AppConfig.ConnectionString))
                 {
                     sqlCon.Open();
 

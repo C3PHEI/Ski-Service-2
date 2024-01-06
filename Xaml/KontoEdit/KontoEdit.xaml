@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ski_Service_2"
         mc:Ignorable="d"
-        Title="KontoEdit" Height="450" Width="800">
+        Title="Konto Entsperrung" Height="250" Width="400">
     <Grid>
         
     </Grid>
