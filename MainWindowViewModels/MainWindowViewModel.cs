@@ -70,7 +70,7 @@ namespace Ski_Service_2.Orders
                                     DatumEinreichung = Convert.ToDateTime(reader["DatumEinreichung"]),
                                     Preis = Convert.ToDecimal(reader["Preis"]),
                                     Status = reader["StatusName"].ToString(),
-                                    Mitarbeiter = Convert.ToInt32(reader["MitarbeiterID"])
+                                    Mitarbeiter = reader["MitarbeiterName"].ToString(),
                                 };
                                 orders.Add(order);
                             }

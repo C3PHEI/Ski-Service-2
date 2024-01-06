@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="Dashboard" Height="700" Width="1000" ResizeMode="NoResize">
     <Grid>
-        <!--Horizontale Definitions-->
+        <!-- Horizontale Definitions -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1000" />
         </Grid.ColumnDefinitions>
 
-        <!--Vertikale Definitions-->
+        <!-- Vertikale Definitions -->
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Margin="10,0,25,0">
-            <DataGrid ItemsSource="{Binding ServiceOrders}" AutoGenerateColumns="False" Width="Auto">
+            <DataGrid ItemsSource="{Binding ServiceOrders}" AutoGenerateColumns="False" Width="Auto" SelectedItem="{Binding SelectedOrder, Mode=TwoWay}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" />
                     <DataGridTextColumn Header="Priorität" Binding="{Binding Prioritaet}" IsReadOnly="True" />
@@ -34,8 +34,16 @@
                     <DataGridTextColumn Header="Mitarbeiter" Binding="{Binding Mitarbeiter}" IsReadOnly="True" />
                 </DataGrid.Columns>
             </DataGrid>
+            <!-- ComboBox für Status -->
+            <ComboBox ItemsSource="{Binding StatusList}" SelectedItem="{Binding SelectedStatus}" DisplayMemberPath="StatusName" SelectedValuePath="StatusID" Margin="10"/>
+
+            <!-- ComboBox für Mitarbeiter -->
+            <ComboBox ItemsSource="{Binding MitarbeiterList}" SelectedItem="{Binding SelectedMitarbeiter}" DisplayMemberPath="MitarbeiterName" SelectedValuePath="MitarbeiterID" Margin="10"/>
+
+            <!-- Button zum Speichern der Änderungen -->
+            <Button Content="Speichern" FontSize="20" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="200" Height="40" Command="{Binding SaveChangesCommand}"/>
         </StackPanel>
-        
+
         <Button Grid.Row="1" 
                 Content="🖌️Bearbeitung" 
                 FontSize="30" 
@@ -48,7 +56,7 @@
         
         <Separator Grid.Row="1" HorizontalAlignment="Left" Height="10" Margin="10,250,0,0" VerticalAlignment="Top" Width="965"/>
         <StackPanel Grid.Row="2" Margin="0,0,0,0">
-            <TextBlock Text="Angemeldeter Benutzer: Maximilian" FontSize="20" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="Auto" Height="Auto"/>
+            <TextBlock Text="Angemeldeter Benutzer:" FontSize="20" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="Auto" Height="Auto"/>
             <Button Content="Abmelden" 
                     FontSize="20" 
                     HorizontalAlignment="Left" 
@@ -69,7 +77,7 @@
             <Button Content="Entsperren" 
                     FontSize="20" 
                     HorizontalAlignment="Left" 
-                    Margin="500,-170,10,10" 
+                    Margin="500,-170,100,10" 
                     Width="365" 
                     Height="157"
                     Command="{Binding EntsperrenCommand}"/>

@@ -1,12 +1,42 @@
 ﻿<Window x:Class="Ski_Service_2.BestellungEdit"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Ski_Service_2"
-        mc:Ignorable="d"
-        Title="BestellungEdit" Height="450" Width="800">
+        Title="Auftrag bearbeitung" Height="450" Width="800"
+        DataContext="{Binding}">
     <Grid>
-        <Label Content="test"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Titel -->
+        <TextBlock Grid.Row="0" Text="Auftrag" FontSize="16" FontWeight="Bold" Padding="5" HorizontalAlignment="Center"/>
+
+        <!-- Auftrag Details -->
+        <DataGrid Grid.Row="1" Margin="10" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding SelectedOrder}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding BestellungsID}" />
+                <DataGridTextColumn Header="Priorität" Binding="{Binding Prioritaet}" />
+                <DataGridTextColumn Header="Dienstleistung" Binding="{Binding Dienstleistung}" />
+                <DataGridTextColumn Header="Kundenname" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}" />
+                <DataGridTextColumn Header="Datum" Binding="{Binding DatumEinreichung, StringFormat=\{0:dd.MM.yyyy\}}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Preis" Binding="{Binding Preis}" />
+
+                <!-- Die Status- und Mitarbeiter-Spalten werden als ComboBox dargestellt, um die Bearbeitung zu ermöglichen -->
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Bearbeitungsabschnitt für Status und Mitarbeiter -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <TextBlock Text="Status:" VerticalAlignment="Center" Margin="5"/>
+            <ComboBox SelectedItem="{Binding SelectedOrder.StatusID}" Width="120" Margin="5"/>
+            <TextBlock Text="Mitarbeiter:" VerticalAlignment="Center" Margin="5"/>
+            <ComboBox SelectedItem="{Binding SelectedOrder.MitarbeiterID}" Width="120" Margin="5"/>
+            <Button Content="Speichern" Command="{Binding SaveCommand}" Background="Green" Margin="5" Padding="10"/>
+            <Button Content="Abbrechen" Command="{Binding CancelCommand}" Background="Red" Margin="5" Padding="10"/>
+        </StackPanel>
     </Grid>
 </Window>
