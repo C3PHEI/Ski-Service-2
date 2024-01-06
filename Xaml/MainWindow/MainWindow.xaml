@@ -5,24 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ski_Service_2"
         mc:Ignorable="d"
-        Title="Dashboard" Height="700" Width="1000">
+        Title="Dashboard" Height="700" Width="1000" ResizeMode="NoResize">
     <Grid>
-    <DataGrid ItemsSource="{Binding ServiceOrders}" AutoGenerateColumns="False">
-        <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
-                <DataGridTextColumn Header="Priorität" Binding="{Binding Prioritaet}" />
-                <DataGridTextColumn Header="Dienstleistung" Binding="{Binding Dienstleistung}" />
-                <DataGridTextColumn Header="Kundenname" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
-                <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}" />
-                <DataGridTextColumn Header="Datum" Binding="{Binding DatumEinreichung, StringFormat=\{0:dd.MM.yyyy\}}" />
-                <DataGridTextColumn Header="Preis" Binding="{Binding Preis}" />
-                <DataGridTextColumn Header="Status" Binding="{Binding StatusID}" />
-                <DataGridTextColumn Header="Mitarbeiter" Binding="{Binding MitarbeiterID}" />
+        <!--Horizontale Definitions-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1000" />
+        </Grid.ColumnDefinitions>
 
-                <!-- Weitere Spalten... -->
-        </DataGrid.Columns>
-    </DataGrid>
-</Grid>
+        <!--Vertikale Definitions-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="10,0,25,0">
+            <DataGrid ItemsSource="{Binding ServiceOrders}" AutoGenerateColumns="False" Width="Auto">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Priorität" Binding="{Binding Prioritaet}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Dienstleistung" Binding="{Binding Dienstleistung}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Kundenname" Binding="{Binding Name}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Datum" Binding="{Binding DatumEinreichung, StringFormat=\{0:dd.MM.yyyy\}}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Preis" Binding="{Binding Preis}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Status" Binding="{Binding StatusID}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Mitarbeiter" Binding="{Binding MitarbeiterID}" IsReadOnly="True" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <Button Grid.Row="1" Content="Bearbeitung" FontSize="30" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="965" Height="200"/>
+        <Separator Grid.Row="1" HorizontalAlignment="Left" Height="10" Margin="10,10,0,0" VerticalAlignment="Top" Width="965"/>
+        <StackPanel Grid.Row="2" Margin="0,0,0,0">
+            <TextBlock Text="Angemeldeter Benutzer: Maximilian" FontSize="20" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="Auto" Height="Auto"/>
+            <Button Content="Abmelden" FontSize="20" HorizontalAlignment="Left" Margin="10,10,10,10" Width="315" Height="157"/>
+            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="500,-213,10,10" VerticalAlignment="Top" Width="Auto" Height="Auto"><Run Text="Hier konnen Sie alle benutzer "/><LineBreak/><Run Text="bearbeiten und entsperren"/></TextBlock>
+            <Button Content="Hier konnen Sie alle Benutzer bearbeiten und entsperren" FontSize="20" HorizontalAlignment="Left" Margin="500,-170,10,10" Width="315" Height="157"/>
+        </StackPanel>
+        <!-- Click="Button_Click -->
+    </Grid>
 </Window>
 
